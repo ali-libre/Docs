@@ -1,0 +1,44 @@
+ 
+git clone https://github.com/mxe/mxe.git
+
+
+compile:
+    MXE_TARGETS=x86_64-w64-mingw32.shared MXE_PLUGIN_DIRS=plugins/gcc10 qt5
+    
+    or File Compiling Description:
+    \\----------------------------------------------------
+        Name: Qt 5.4.0 (qt5)
+        ABI: x86-windows-unknown-pe-32bit
+        Source: /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5
+        mkspec: win32-g++
+        qmake: /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/bin/qmake
+        Version: 5.4.0
+        QMAKE_SPEC linux-g++
+        QMAKE_VERSION 3.0
+        QMAKE_XSPEC win32-g++
+        QT_HOST_BINS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/bin
+        QT_HOST_DATA /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5
+        QT_HOST_LIBS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/lib
+        QT_HOST_PREFIX /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5
+        QT_INSTALL_ARCHDATA /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5
+        QT_INSTALL_BINS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/bin
+        QT_INSTALL_CONFIGURATION /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/etc/xdg
+        QT_INSTALL_DATA /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5
+        QT_INSTALL_DEMOS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/examples
+        QT_INSTALL_DOCS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/doc
+        QT_INSTALL_EXAMPLES /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/examples
+        QT_INSTALL_HEADERS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/include
+        QT_INSTALL_IMPORTS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/imports
+        QT_INSTALL_LIBEXECS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/bin
+        QT_INSTALL_LIBS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/lib
+        QT_INSTALL_PLUGINS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/plugins
+        QT_INSTALL_PREFIX /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5
+        QT_INSTALL_QML /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/qml
+        QT_INSTALL_TESTS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/tests
+        QT_INSTALL_TRANSLATIONS /home/snake91/mxe/usr/i686-w64-mingw32.static/qt5/translations
+        QT_SYSROOT
+        QT_VERSION 5.4.0
+    \\----------------------------------------------------
+    
+    qmake path:
+    /usr/x86_64-w64-mingw32.shared/qt5/bin/qmake
