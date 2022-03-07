@@ -40,5 +40,5 @@ compile:
         QT_VERSION 5.4.0
     \\----------------------------------------------------
     
-    qmake path:
+qmake path:
     /usr/x86_64-w64-mingw32.shared/qt5/bin/qmake
