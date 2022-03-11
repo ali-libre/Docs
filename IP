@@ -1,0 +1,6 @@
+for currnet IP:
+hostname --ip-address
+hostname -i
+
+to scan::
+    nmap 192.168.43.0-255

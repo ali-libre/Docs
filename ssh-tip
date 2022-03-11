@@ -1,0 +1,12 @@
+ssh host@ip
+ssh root@192.168.43.x
+for file copy:
+install sshfs
+scp [from] [to]
+for folder use -r & -p for preserve system metadata
+scp -r ~/x root@192...:/root
+
+link or mount:
+sshfs user@server.com:/remote/dir /home/user/test
+unmount:
+fusermount -u /home/youruser/remotecomp

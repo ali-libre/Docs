@@ -1,0 +1,14 @@
+for silent boot:
+in kernel parameter:
+quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log-priority=3
+
+To hide any kernel messages from the console:
+/etc/sysctl.d/20-quiet-printk.conf
+kernel.printk = 3 3 3 3
+
+
+vt.global_cursor_default=0
+
+setterm -cursor on >> /etc/issue
+
+disable gettty service

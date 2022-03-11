@@ -1,0 +1,114 @@
+octave:
+
+
+
+package :
+https://octave.sourceforge.io/packages.php
+
+install package :
+pkg install Downloaded_ackage_name
+pkg install -forge Online_package
+-verbose
+updat
+
+for startup setting:
+.octaverc
+
+for symbols good output:
+sympref
+
+for define variable using symbolic ::
+pkg load symbolic
+syms x y 
+
+ calculate example's :: 
+ {
+z = (x + y) * ( x + y) ^2
+{
+ -> z = (sym)
+
+            3
+  (x + y)
+ }
+ 
+ z = expand (z)
+ {
+ z = (sym)
+
+    3        2                2     3
+  x  + 3⋅x ⋅y + 3⋅x⋅y  + y
+ }
+
+z = solve(z)
+{
+z = (sym) -y
+}
+z = x^3 + x^2* y + 4*x^2 +4*x*y +4*x + 4*y
+z = factor(z)
+{
+z = (sym)
+
+         2
+  (x + 2) ⋅(x + y)
+}
+
+
+syms x y
+simple((x^3-y^3)/(x-y))
+simplify:
+x^2 + x*y + y^2
+ 
+radsimp: 
+(x^3 - y^3)/(x - y)
+ 
+simplify(100): 
+x^2 + x*y + y^2
+ 
+combine(sincos):
+(x^3 - y^3)/(x - y)
+ 
+combine(sinhcosh):
+(x^3 - y^3)/(x - y)
+ 
+ 
+combine(ln):
+(x^3 - y^3)/(x - y)
+ 
+factor:
+x^2 + x*y + y^2
+ 
+expand:
+x^3/(x - y) - y^3/(x - y)
+ 
+combine:
+(x^3 - y^3)/(x - y)
+ 
+rewrite(exp):
+(x^3 - y^3)/(x - y)
+ 
+rewrite(sincos):
+(x^3 - y^3)/(x - y)
+ 
+rewrite(sinhcosh):
+(x^3 - y^3)/(x - y)
+ 
+rewrite(tan):
+(x^3 - y^3)/(x - y)
+ 
+mwcos2sin:
+(x^3 - y^3)/(x - y)
+ 
+collect(x):
+x^2 + y*x + y^2
+ 
+ans =
+x^2 + x*y + y^2
+
+
+syms x y
+simplify((x^3-y^3)/(x-y))
+{
+ans =
+x^2 + x*y + y^2
+}
+}

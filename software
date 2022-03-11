@@ -1,0 +1,24 @@
+software::
+
+flow chart ::
+1 --- kivio (calligra flow ) were remove becuaseof unmainteined
+2 --- yed  its not bad offer middle-modern chart (install using aur avail in /home/ali/workspace/Sys/PKG)
+3 --- open office drawer  too offer middle-modern chart some more 
+4 --- gliffy  online flow chart  not bad. (gliffy.com)
+
+
+aur::
+//for kate code completion::
+kate-root
+katecpp-helper-plugin
+
+graphic::
+animation  
+    synfig
+    krita
+    blender
+painting  
+    krita
+    gimp
+    mypaint
+    ...

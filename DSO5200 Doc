@@ -1,0 +1,13 @@
+Oscope Power Board::
+
+A line Filter in the input
+NTC to Protect the main Regulator
+
+jr TR-AC
+1       2       3       4       5       6       7,8     9,10    11      12
+GND    15.3    GND     6.51    GND     -9       GND     3.3     GND     +5
+
+1-6 to left side of oscope ADC,Switch,...
+6-12 to right side CPLD,FPGA,ARM,LCD,...
+
+It Also have poor(7812) 12V to fan Supply

@@ -1,0 +1,1 @@
+echo 'cvlc dvb-t://frequency=594000000 :program=514 :run-time=2700 --sout Videos/Aufnahmen/heute-show-120330.mpg vlc://quit' | at 22:25 

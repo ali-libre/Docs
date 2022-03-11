@@ -1,0 +1,18 @@
+install yaourt ::
+
+
+sudo pacman -S fakeroot
+git clone https://aur.archlinux.org/package-query.git
+cd package-query
+makepkg -si
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+
+install pacaur::
+git clone https://aur.archlinux.org/pacaur.git
+makepkg -si
+
+if you get libalpm11.0 not found 
+pacman -R package-query yaour 
+then reinstall theme again

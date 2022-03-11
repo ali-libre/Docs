@@ -1,0 +1,124 @@
+for indy copy f.fpc to f.lazarus --overwrite then rewrite .flazarus
+compile with -Ur becuse of recursive unit
+compile install add to project -- if not find then add indy folder to project option
+to get lazarus: svn co http://svn.freepascal.org/svn/lazarus/trunk lazarus
+to update : svn up
+note:: using last fpc will not work with last lazarus (eg: laz1.9 looking for fpc3.0.4 but same age fpc is 3.3.4)
+add new package to lazarus:
+package -> "open Package File(.lpk) ..." >> hten select the file
+
+to install component:
+on lazarus -> menu( package-> open package (.lpk)... ) -> go to component folder find .lpk . in 'package form' click compile and add to project.
+
+to use bgrabitmap:
+uses (BGRABitmap, BGRABitmapTypes). where must to use 
+
+for create new component:
+https://www.packtpub.com/books/content/creating-lazarus-component
+
+procedure ....();
+var bmp: TBGRABitmap; 
+begin 
+    bmp := TBGRABitmap.Create(ClientWidth,ClientHeight,BGRABlack);
+    bmp.FillRoundRect(20,20,248,168,15,15,BGRA(255,192,0,255),dmDrawWithTransparency);
+    bmp.DrawLineAntialias(10,10,80,100,bgra(r,g,b),1);
+    ...
+    ...
+    bmp.Draw(Canvas,0,0,True);
+    bmp.Free;
+end;
+
+#for full antialias object specified location must be painted.
+
+
+for timer :
+
+
+with TTimer.Create(Self) do
+begin
+  OnTimer:=@Timing;
+end;
+
+procedure TForm1.Timing(Sender: TObject);
+begin
+  Caption:=TimeToStr(Now);
+end;    
+
+
+
+//function TForm1.ali: String;
+//begin
+//
+//end;
+//
+//procedure ali;
+//begin
+//  bmp.
+//  WriteLn('lkld');
+//end;
+//
+//procedure Muhammad(const Hehe);
+//begin
+//
+//end;
+
+
+//grd := BGRAGradientSHanner.TBGRAHueGradient.Create(BGRA(24,24,0), BGRA(60,60,0), []);
+// bmp.GradientFill(
+//                  DBx[0],
+//                  DBy[1],
+//                  DBx[0]+10,
+//                  DBy[2],
+//                  grd,
+//                  gtLinear,
+//                  PointF(DBx[0],(DBy[1] + DBy[2]) div 2),
+//                  PointF(DBx[0] + 10,(DBy[1] + DBy[2]) div 2),
+//                  dmSet);
+//c := ColorToBGRA(ColorToRGB(clWindowText));
+//CW := BGRA(8,14,8);
+//bmp.TextOut(10,10,'ØªØ§ ;jas;dlfkj Ø®ÙÛØ¯',bgra(10,50,120),tarightJustify);
+//bmp.FillRoundRectAntialias(5,30,250,475,15,15,BGRA(106,6,6),[rrDefault]);
+//bmp.DrawLineAntialias(0,0,500,600,bgra(0,255,0),2);
+//x := 150;
+//y := 100;
+//rx := 100;
+//ry := 50;
+//tex := bmp.CreateBrushTexture(bSHross,BGRAWhite,BGRABlack,8,8,1) as TBGRABitmap;
+//bmp.RoundRectAntialias(x-rx-10,y-ry-10,x+rx+10,y+ry+10,20,5,c,11);
+//bmp.RoundRectAntialias(x-rx-10,y-ry-10,x+rx+10,y+ry+10,20,20,tex);
+//for x :=1 to 200 do
+//begin
+//  bmp.FillRectAntialias(x,0,2,200,tex);
+//end;
+//bmp.FillEllipseAntialias(x,y,rx-0.5,ry-0.5,tex);
+//bmp.EllipseAntialias(x,y,rx,ry,c,1);
+//if DrawVal[0] = 1 then
+//begin
+  //bmp.FillRoundRectAntialias(DBx[0],DBy[0],DBx[1],DBy[1],15,15,CW,[rrDefault]);
+  //bmp.FillRoundRectAntialias(DBx[2],DBy[2],DBx[3],DBy[3],15,15,BGRA(106,6,6),[rrDefault]);
+  //for Pos := 0 to 63 do
+  //begin
+  //bmp.DrawLineAntialias(Pos+DBx[0],DBy[1]-50-ECG[Pos],Pos+1+DBx[0],DBy[1]-50-ECG[Pos+1],bgra(0,255,10),2);
+  //if Pos >=237 then Pos:=1;
+  //Alpha := 255;
+  //if Poss >= DBx[1] -19 then
+  //begin
+  //   bmp.FillRectAntialias(Poss,DBy[0]+15,Poss+17,DBy[1]-15,CW);
+  //   Poss := DBx[0]-1;
+  //end
+  //else
+  //begin
+  //   Poss:=Pos+DBx[0]+1;
+  //end;
+  //for PL:= poss to poss +17 do
+  //begin
+    //Sleep(10);
+  //  Alpha := Alpha - 10;
+  //  bmp.DrawVertLine(PL+1, DBy[0]+10 , DBy[1]-10 , BGRA(8,14,8,Alpha));
+  //end;
+  //Pos := Pos +1;
+    //bmp.DrawLineAntialias(Pos+DBx[2],DBy[3]-50-ECG[Pos],Pos+1+DBx[2],DBy[3]-50-ECG[Pos+1],bgra(0,255,10),2);
+  //end;
+//end;
+//DrawVal[0] := 0;
+   

@@ -1,0 +1,73 @@
+qvfb  :: qt virtual frame buffer 
+
+
+music production::
+qtractor
+lmms
+Ardour
+
+network ::
+network_manager
+    dnsmasq: connection sharing
+    pkcs11-helper: PKCS-11 plugin
+    botan: botan plugin
+openconnect: Cisco AnyConnect VPN plugin
+wpa_supplicant
+
+
+graphic::
+krita
+inkscape
+karbon
+blender
+kcolorchooser
+
+audio::
+pulseaudui
+    pulseaudio-alsa: ALSA configuration (recommended)
+    
+office::
+calligra
+    libwpg: Corel WordPerfect Graphics image importer
+    libwps: Microsoft Works file word processor format import
+    libvisio: Microsoft Visio import filter
+    libetonyek: Apple Keynote import filter
+    pstoedit: EPS to SVG filter
+    poppler: PDF to SVG filter [installed]
+    openjpeg: PDF to SVG filer
+    libgit2: Calligra Gemini git plugin [installed]
+    kirigami2: for Calligra Gemini [installed]
+kdb
+    libmariadbclient: MySQL plugin
+    postgresql: PostgreSQL plugin
+kexi
+
+system::
+konsole
+dolphin
+ksysguard
+
+speek dispatcher::
+espeak
+
+developing::
+qtcreator
+    qt5-doc: integrated Qt documentation
+    qt5-examples: welcome page examples
+    qt5-translations: for other languages
+    gdb: debugger [installed]
+    cmake: cmake project support
+    x11-ssh-askpass: ssh support [installed]
+    git: git support
+    mercurial: mercurial support
+    bzr: bazaar support
+    valgrind: analyze support
+
+    
+vpn::
+    bitmask are good by longerway ;)
+    it's sensitive to datetime
+    but Riseup are welcome. no login required...
+        https://riseup.net/en/vpn
+        good toturial ::
+            https://snapcraft.io/install/riseup-vpn/arch

@@ -1,0 +1,9 @@
+DIscover can MAnage Archlinux Package
+
+packagekit-qt5 to manage Archlinux packagekit
+
+fwupd to firmware update support
+
+flatpack to install flatpak program
+this folder contain flatpak program:
+/var/lib/flatpak/app/ 

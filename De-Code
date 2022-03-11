@@ -1,0 +1,10 @@
+jpeg decode compiairtion:
+http://www.briancbecker.com/blog/2010/analysis-of-jpeg-decoding-speeds/
+
+decode and rescale apart not thw whole:
+http://jpegclub.org/djpeg/
+
+best decompress algorithm : libjpeg_simd-6b
+
+arduino code :
+https://github.com/Bodmer/JPEGDecoder

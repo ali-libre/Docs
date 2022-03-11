@@ -1,0 +1,20 @@
+write read chache:
+/dev/sda {
+        write_cache = off
+}
+/dev/sdb {
+        write_cache = off
+}
+/dev/sdc {
+        write_cache = off
+}
+/dev/sdd {
+        write_cache = off
+}
+
+
+
+
+hdparm -W0 /dev/sdb
+
+-k for keep over reset

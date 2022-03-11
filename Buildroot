@@ -1,0 +1,119 @@
+buildroot:
+buildroot for rasp-pi can achive by these link:
+1) Buildroot.org/download :
+    make list-defconfigs
+    //after: ex-> 
+    make raspberrypi_defconfig
+    //simple configuration generated
+    //other option can access by:
+    make menuconfig
+    {the best option for u...
+        Build-Option >>
+            Toolchain-Type -> External
+            copy-GDB
+            copy gconv
+        System-Config>>
+            #EveryThing You Want...!
+        Target-Package >>
+            install watchdog : 2sec is good
+            hardware handling -> rpi-userlan, start vcfield, minicom, &&i2c-tools
+            graphics library and ... ->  qt5 -> graphiceffect, imageformat, multimedia, serialport,dbus,icu, tslib,eglfs,default-graphic=eglfs,fontconfig,gif,jpeg,png,approve-free-license
+            network-option -> openssh() # pppd for gprs/3g-4g internet
+            Audio and Video -> (Alsa -> amixer), (gstreamer1.0 -> base, Good, (Bad-> opengl), Ugly)
+            text editor -> nano
+    }
+    //and
+    make all    
+    //during this will download and take a couple of time//
+
+
+2) github.com/nezticle/RaspberryPi-BuildRoot :
+    
+document's:
+    https://github.com/gamaral/rpi-buildroot
+    https://agentoss.wordpress.com/2011/03/06/building-a-tiny-x-org-linux-system-using-buildroot/
+
+
+add app:
+    http://buildroot.uclibc.org/downloads/manual/manual.html#adding-packages
+    http://stackoverflow.com/questions/19783795/how-to-add-my-own-software-to-buildroot-linux
+    ::::
+    to do this you have to create folder in "package" directory named your package
+    create a file "config.in" contain::
+    {
+    config BR2_PACKAGE_LIBFOO
+        bool "libfoo"
+        help
+          This is a comment that explains what libfoo is.
+
+          http://foosoftware.org/libfoo/         }
+          
+    add your config.in to "package/config.in"
+    hardest::
+    
+
+#**#to compile qt-proj using buildroot 
+        **https://github.com/pbouda/buildroot-qt-dev/blob/master/doc/qtcreator.md
+        https://bbs.nextthing.co/t/buildroot-app-development-using-qtcreator/15500
+        IN QTCREATOR:: Tools/Options/Build&Run 
+        Add a GCC compiler and set the Compiler path to [home of CHIP-buildroot]/output/host/usr/bin/arm-linux-gnueabihf-gcc
+        Qt Versions page and add the buildroot built Qt; qmake is located at [home of CHIP-buildroot]/output/build/qt-4.8.7/bin/qmake
+        Kits page and add a new kit;left the default Device type and Device (Desktop/Local PC), set Sysroot to buildroot/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot
+        manually copy the moc application from [home of CHIP-buildroot]/output/build/qt-4.8.7/bin to [home of CHIP-buildroot]/output/host/usr/bin. That's it. 
+
+#**add bootup logo: alla of theme same
+        http://apsvr.com/blog/?p=171
+        http://www.arm9board.net/wiki/index.php?title=Create_your_own_boot_logo
+
+        ::::
+        #install netpbm
+        #and a ppm picture you can using with gwenview and krita
+        #reduce to 224 color
+        ppmquant 224 logo_linux_custom.ppm > logo_linux_custom_224.ppm
+        pnmnoraw logo_linux_custom_224.ppm > logo_linux_custom_ascii_224.ppm
+        #copy the last logo file to buildroot-2017.02.1/output/build/linux-(....)/drivers/video/logo
+        add "obj-$(CONFIG_LOGO_ARMADEUS_CLUT224)     += logo_custom_clut224.o" to makefile
+        """
+        extern const struct linux_logo logo_custom_clut224;
+        and
+        #ifdef CONFIG_LOGO_ARMADEUS_CLUT224
+            /* Armadeus Linux logo */
+            logo = &logo_custom_clut224;
+        #endif
+        inside if depth =8
+        """"
+        to logo.c
+        add
+        <source lang="bash"> config LOGO_CUSTOM_CLUT224
+            bool "Your own boot logo here"
+        default y </source>
+        >> to kconfig
+        add "extern const struct linux_logo logo_custom_clut224; " to buildroot-2011.05/output/build/linux-custom/include/linux/linux_logo.h
+        make linux-menuconfig
+        Device Drivers  --->
+            Graphics support  --->
+            [*] Bootup logo  --->
+                [*] Your own boot logo here
+        make
+
+get cmake error
+    after overriding cmake with greter version it's worked.
+    
+    
+rpi3 ::
+    https://delog.wordpress.com/2014/10/10/wireless-on-raspberry-pi-with-buildroot/
+
+    
+wifi network manage ::
+    https://delog.wordpress.com/2014/10/10/wireless-on-raspberry-pi-with-buildroot/
+    
+    for custom kernel on menoconfig >> kernel >> kernel version >> custom-tarbal
+
+powersaving mode::
+    https://babaawesam.com/2014/01/24/power-saving-tips-for-raspberry-pi/ *
+    https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=24682 **
+
+extra size::
+menuconfig -> File System -> Extra Block Size
+
+clear command would be good to clear screen

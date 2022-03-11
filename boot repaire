@@ -1,0 +1,8 @@
+repair of none boot partition  gnu-os installation:
+first create a boot partition the nmake it bootable.
+copy boot content of os into the boot partition.
+mount the boot-partition into the boot directory of os.
+add boot-partition property to the fstab like this::
+"/dev/sda2    /boot     ext3     defaults    0  0"
+#grub-install --root-directory=/mnt/main /dev/sda
+done.

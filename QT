@@ -1,0 +1,140 @@
+for license comparison:
+    https://www.qt.io/licensing-comparison/
+
+framebuffer:
+    -platform linuxfb LinuxFb:fb="/dev/fb1" -nomouse
+another -platform plugin  are minimal offscreen
+
+export QT_QPA_FONTDIR=<path to font files>
+
+
+QPixmap orig;
+    QPixmap rotated = orig.rotated(45);
+
+int xoffset = (rotated.width() - orig.width()) / 2;
+int yoffset = (rotated.height() - orig.height()) / 2
+rotated = rotated.copy(xoffset, yoffset, orig.width(), orig.height());
+
+ui->Pic1->setPixmap(QPixmap( "/home/ali/workspace/ALI/IMAGE/C" + QString::number(a) + ".bmp"));
+but memory leak
+it load directly image
+for previes image are usefull
+
+##global-var's:
+##total project;
+extern qreal g_some_double; // Note the important use of extern!
+##to be sure do not optimize:
+volatile 
+
+to use QSerialPort -> in pro file += serialport
+and 
+#include QSerialPort
+ QSerialPort serialPort;
+  serialPort.setBaudRate(QSerialPort::Baud9600);
+  serialPort.setPortName("/dev/pts/1");
+//  serialPort.open(QSerialPort::ReadOnly)
+  if (serialPort.open(QIODevice::ReadOnly)) {
+    QByteArray readData = serialPort.readAll();
+    while(1){
+      while (serialPort.waitForReadyRead(150)) readData.append(serialPort.readAll());
+      if (readData.count()) qDebug(readData);
+      readData.clear();
+      }
+    }
+
+    
+would start with custom style :
+-style Breeze
+
+Timer
+
+  QTimer* SerialTimer = new QTimer(0); //parent must be null
+  SerialTimer->setInterval(1000);
+  SerialTimer->moveToThread(SerialThread);
+//  QTimer* Timer = new QTimer(0);
+//  Timer->setInterval(1000);
+
+timer in a new thread:
+  QThread* SerialThread = new QThread(this);
+  QTimer* SerialTimer = new QTimer(0); //parent must be null
+  SerialTimer->setInterval(1000);
+  SerialTimer->moveToThread(SerialThread);
+  connect(SerialTimer, SIGNAL(timeout()), SLOT(CHVeiew()), Qt::DirectConnection);
+  SerialTimer->connect( SerialThread, SIGNAL(started()), SerialTimer, SLOT(start() ));
+  SerialThread->start();
+  
+start function in new thread:
+  QThread thread;
+  moveToThread(&thread);
+  connect(&thread, SIGNAL(started()), this, SLOT(myfunction())); //cant have parameter sorry, when using connect
+  thread.start();
+another way is : http://doc.qt.io/qt-5/qtconcurrentrun.html ...
+
+set Qlabel color
+    You can use QPalette, however you must set setAutoFillBackground(true); to enable background color
+
+    QPalette sample_palette;
+    sample_palette.setColor(QPalette::Window, Qt::white);
+    sample_palette.setColor(QPalette::WindowText, Qt::blue);
+
+    sample_label->setAutoFillBackground(true);
+    sample_label->setPalette(sample_palette);
+    sample_label->setText("What ever text");
+
+
+Qmediaplayer
+    example::
+    #include "mainwindow.h"
+    #include <QApplication>
+    #include <QMediaPlayer>
+    #include <QVideoWidget>
+
+    int main(int argc, char *argv[])
+    {
+        QApplication a(argc, argv);
+        QMediaPlayer *player = new QMediaPlayer;
+        QVideoWidget *vw = new QVideoWidget;
+
+        player->setVideoOutput(vw);
+
+        player->setMedia(QUrl::fromLocalFile("/home/debian/video.avi"));
+
+        vw->setGeometry(100, 100, 320, 240);
+        vw->show();
+
+        player->play();
+
+        return a.exec();
+    }
+    add multimedia multimediawidgets to your .pro
+    
+    
+QLabel Example::
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Image"), "c:/", tr("Image Files (*.png *.jpg *.bmp *.avi)"));
+    movie = new QMovie(fileName);
+    movie->setFileName(fileName);
+    label->setMovie(movie);
+    movie->start();
+    workspace->addWindow(label);
+    label->show();
+    
+fprint:: according to 
+    http://en.cppreference.com/w/cpp/io/c/fprintf
+    %d = decimal %x = hexa capital X to print "AF"
+    %hhX "hh" to tel unsigned
+
+http server::
+  https://github.com/azadkuh/qhttp
+
+for server stand alone exe do::
+    http://wiki.qt.io/Deploy_an_Application_on_Windows
+    
+for buildroot cconn-man now supported:: for addition read (Doc *)buildroot
+
+QString::number(20)
+
+for custom embeded development auto completion use::
+INCLUDEPATH += "/usr/avr/include"
+
+for static compile 
+qmake "CONFIG+=static" "CONFIG+=staticlib" -recursive

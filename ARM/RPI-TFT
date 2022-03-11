@@ -1,0 +1,50 @@
+ili9488:
+you have tow way:
+    1)install wheezy debian and using cpu driving lcd (this work on rpi1~3 ):
+    
+    
+        download raspbian wheezy from:
+            https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/
+          or
+            https://sourceforge.net/projects/raspbian-wheezy-pi/
+            
+        then according to this page:
+            http://appdictive.dk/blog/projects/2015/10/30/cheap_tft_display_on_raspberry_pi/
+            
+        sudo nano /etc/modules
+            fbtft_device name=flexpfb rotate=180 fps=60 gpios=dc:18,reset:7,wr:17,cs:4,db00:22,db01:23,db02:24,db03:10,db04:25,db05:9,db06:11,db07:8
+            #* abow line can have speed=48000000 to speedup
+            flexfb width=480 height=320 buswidth=8 init=-1,0xb0,0x0,-1,0x11,-2,120,-1,0x3A,0x55,-1,0xC2,0x33,-1,0xC5,0x00,0x1E,0x80,-1,0x36,0x28,-1,0xB1,0xB0,-1,0xE0,0x00,0x04,0x0E,0x08,0x17,0x0A,0x40,0x79,0x4D,0x07,0x0E,0x0A,0x1A,0x1D,0x0F,-1,0xE1,0x00,0x1B,0x1F,0x02,0x10,0x05,0x32,0x34,0x43,0x02,0x0A,0x09,0x33,0x37,0x0F,-1,0x11,-1,0x29,-3
+            
+        sudo nano /boot/cmdline.txt
+            fbcon=map:10 fbcon=font:VGA8x8 FRAMEBUFFER=/dev/fb1 #* Before rootwait
+            
+        sudo apt-get install xserver-xorg-video-fbdev
+        
+        sudo nano /usr/share/X11/xorg.conf.d/99-fbdev.conf
+            Section "Device"  
+            Identifier "myfb"
+            Driver "fbdev"
+            Option "fbdev" "/dev/fb1"
+            EndSection
+            
+        sudo reboot
+        
+    optional: on the /boot/config.txt
+        dtoverlay=rpi-display,speed=48000000,rotate=180,fps=24
+        dtparam=spi=on
+    
+    
+    
+    
+    2)download the company image with optimized kernel and DMA:
+        
+        downloading manual, image, kernel... from this page:
+            https://www.elecrow.com/395-inch-tft-display-for-raspberry-pi-p-1414.html #*(wget can download from dropbox)
+            
+        write image and then replace kernel on the boot partition
+        
+testing video:
+    mplayer -vo fbdev2:/dev/fb1 -vf scale=320:-3 BigBuckBunny_320x180.mp4
+    
+this page of notro have good detail to fb:https://github.com/watterott/RPi-Display/blob/master/docu/FBTFT-Install.md

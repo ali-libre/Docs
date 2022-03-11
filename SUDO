@@ -1,0 +1,5 @@
+#sudo:
+#sudo allow user to run everything with password
+user ALL=(ALL) ALL 
+#remeber password for a time is 5 minute
+Defaults:user timestamp_timeout=0

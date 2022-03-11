@@ -1,0 +1,5 @@
+app troubleshooting ::
+
+lcd-image-convertor:
+for *.qm do 
+lrelease lcd-image-converter-ru.ts lcd-image-converter-ru.qm

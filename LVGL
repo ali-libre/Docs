@@ -1,0 +1,61 @@
+
+
+ LVGL - Light and Versatile Graphics Library
+
+ 
+ LVGL provides everything you need to create embedded GUI with easy-to-use graphical elements, beautiful visual effects and low memory footprint.
+Website · Live demo · Docs · Forum · Blog
+
+    Features
+    Supported devices
+    Quick start in a simulator
+    Add LVGL to your project
+    Learn the basics
+    Examples
+    Release policy
+    Contributing
+
+Features
+
+    Powerful building blocks buttons, charts, lists, sliders, images, etc.
+    Advanced graphics with animations, anti-aliasing, opacity, smooth scrolling
+    Simultaneously use various input devices touchscreen, mouse, keyboard, encoder, buttons, etc.
+    Simultaneously use multiple displays i.e. monochrome and color display
+    Multi-language support with UTF-8 encoding, Bidirectional support, and Arabic text handling
+    Fully customizable graphical elements
+    Hardware independent to use with any microcontroller or display
+    Scalable to operate with little memory (64 kB Flash, 10 kB RAM)
+    OS, External memory and GPU supported but not required
+    Single frame buffer operation even with advances graphical effects
+    Written in C for maximal compatibility (C++ compatible)
+    Micropython Binding exposes LVGL API in Micropython
+    Simulator to develop on PC without embedded hardware
+    Tutorials, examples, themes for rapid development
+    Documentation and API references
+
+Supported devices
+
+Basically, every modern controller (which is able to drive a display) is suitable to run LVGL. The minimal requirements are:
+
+    16, 32 or 64 bit microcontroller or processor
+    > 16 MHz clock speed is recommended
+    Flash/ROM: > 64 kB for the very essential components (> 180 kB is recommended)
+    RAM:
+        Static RAM usage: ~2 kB depending on the used features and objects types
+        Stack: > 2kB (> 8 kB is recommended)
+        Dynamic data (heap): > 2 KB (> 16 kB is recommended if using several objects). Set by LV_MEM_SIZE in lv_conf.h.
+        Display buffer: > "Horizontal resolution" pixels (> 10 × "Horizontal resolution" is recommended)
+    C99 or newer compiler
+
+Note that the memory usage might vary depending on the architecture, compiler and build options.
+
+Just to mention some platforms:
+
+    STM32F1, STM32F3, STM32F4, STM32F7
+    Microchip dsPIC33, PIC24, PIC32MX, PIC32MZ
+    NXP Kinetis, LPC, iMX
+    Linux frame buffer (/dev/fb)
+    Raspberry PI
+    Espressif ESP32
+    Nordic nrf52
+    Quectell M66

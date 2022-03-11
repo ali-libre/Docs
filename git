@@ -1,0 +1,6 @@
+git usage ::
+
+git clone 
+for clone the git
+to resume ::
+git svn clone then git svn fetch

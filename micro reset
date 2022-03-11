@@ -1,0 +1,5 @@
+reset micro::
+lpc178 NVIC_SystemReset();
+void(*Reset) (void) = 0;
+asm volatile(“jmp 0”):
+enable watchdog and while(1);

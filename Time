@@ -1,0 +1,5 @@
+ timedatectl set-time "yyyy-MM-dd hh:mm:ss"
+ timedatectl set-local-rtc 1
+ 1 mean's local 0 mean's UTC
+ timedatectl list-timezones
+ timedatectl set-timezone Zone/SubZone

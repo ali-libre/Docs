@@ -1,0 +1,39 @@
+top Menu for applications
+Globalmenu + active-window-control
+
+but there is beter
+
+appmenu-window-applet
+https://store.kde.org/p/1274975/
+needs kf5
+git is here
+https://github.com/psifidotos/applet-window-appmenu
+
+list of files
+
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/metadata.desktop
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/code
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/code/util.js
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/config
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/config/main.xml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/config/config.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/Broadcaster.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/FlickableIndicators.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/main.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/MenuFlickable.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/PaintedToolButton.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/config
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/config/ColorsComboBox.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/contents/ui/config/ConfigGeneral.qml
+-- Installing: /usr/share/plasma/plasmoids/org.kde.windowappmenu/metadata.json
+-- Installing: /usr/share/metainfo/org.kde.windowappmenu.appdata.xml
+-- Installing: /usr/share/kservices5/plasma-applet-org.kde.windowappmenu.desktop
+-- Installing: /usr/lib/qt/plugins/plasma/applets/plasma_applet_windowappmenu.so
+-- Installing: /usr/lib/qt/qml/org/kde/private/windowAppMenu/libappmenuplugin.so
+-- Installing: /usr/lib/qt/qml/org/kde/private/windowAppMenu/qmldir
+
+after install i found it bad
+could not show full menu if there is no space left on panel

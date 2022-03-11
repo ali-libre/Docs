@@ -1,0 +1,113 @@
+os.archlinuxarm.org/os/
+
+#installing os :
+#create tow partition on sd. one fat ,second ext4(ext3 prefer for faster boot)
+
+package need to install :
+xorg-server xorg-xinit ttf-ubuntu-font-family ttf-liberation ttf-dejavu xf86-input-keyboard xf86-input-mouse xf86-video-fbdev gtk2 i2c-tools lm_sensors gcc make base-devel mkinitcpio zsh ntfs-3g dosfstools
+
+#install plymouth (boot-splash):
+#download form github
+https://github.com/T4d3o/Plymouth-lite
+pacman -S mkinitcpio
+initrd=0x00f00000" to the beginning of /boot/cmdline.txt.
+
+https://raspberrypi.stackexchange.com/questions/1214/how-to-add-custom-loading-screen
+
+#install fpc lazarus :
+#don't install fpc using repo. they are bad.
+dwonload from there: ftp://ftp.freepascal.org/pub/fpc/dist/
+tar -xvf fpc-3.0.0.arm-linux-raspberry1wq.tar
+
+./install.sh
+#fpc;
+#install gtk2 and base-devel gdb
+#fpcsrc must avail
+#(lazarus)make clean bigide
+
+good command
+http://elinux.org/RPI_vcgencmd_usage
+ex:watch -n 1 /opt/vc/bin/vcgencmd measure_temp
+
+
+#for rasp-pi info http://elinux.org/RPiconfig
+
+#for debugging:
+# install qemu qemu-extra-arch ( reboot needed)
+# and from yaourt binfmt-support qemu-user-static
+update-binfmts --importdir /var/lib/binfmts/ --import
+update-binfmts --display qemu-arm
+# of course they are avail on workspace/Sys/pkg
+####this must be run before chroot ontoher architect#######
+update-binfmts --enable qemu-arm
+
+ 
+#for create image such raw :
+qemu-img create -f raw arch-rasp-pi 4G
+#for resize (while raw image cannot be resize negativley) so becarefull
+#dynamic disk are recently licensed as microsoft but now on symantec... nowlicensed GPL
+qemu-img resize arch-rasp-pi +/-4G
+#while they simply can be patitioning using fdisk and format mkfs... finaly mount using mount
+cp /usr/bin/qemu-arm-static /mnt/usr/bin
+chroot /mnt/arch /usr/bin/qemu-arm-static /bin/bash
+#or directly using zsh or viceversa...
+#for gui u must have x11 run so need xorg-xhost
+xhost +local
+#for get currnet display 
+echo $DISPLAY
+#and for redirect:
+export DISPLAY=:0
+#for internet connection copy resolve.conf on etc
+#for Overclocking http://www.raspberry-pi-geek.com/Archive/2015/13/Overclocking-the-CPU-of-a-Rasp-Pi-running-OpenELEC/(offset)/2
+
+
+for startup logo add cmdline.txt logo.nologo 
+
+#for disable screensaver 
+Section "ServerLayout"
+    Identifier "ServerLayout0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime"     "0"
+    Option "BlankTime"   "0"
+EndSection
+or xset s off
+
+for poweron hdmi 
+    /opt/vc/bin/tvservice -p {power off } -o
+    
+for icon :
+change thenme name in /usr/share/icons/default/index.theme
+copy cursor to /usr/share/icons/
+and chmod -R 755 theme-name
+
+for font i copied ~/.font.onf....
+
+it's beter to remode hdmi force and turn on by command.
+for disable boot square splash config.txt add :
+disable_splash=1
+
+for antialiasing font be sure that ttf-dejavu and ttf-libration been installed
+
+rasp-pi3 arch-wiki:
+https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
+its better to install rasp-pi2 as OS
+
+
+for vcgen command:
+http://elinux.org/RPI_vcgencmd_usage
+
+for rtc :
+dtparam=i2c_arm=on
+dtoverlay=i2c-rtc,ds1307
+device_tree_param=spi=on
+
+xorg -- -bac
+
+
+rasp-pi3 b+:
+norm-boot take 29sec;
+over-clocked on boot take 20 sec;
+
+silent boot:
+ vt.global_cursor_default=0

@@ -1,0 +1,5 @@
+to install daily kicad build
+sudo add-apt-repository ppa:js-reynaud/ppa-kicad
+
+to install gpu
+

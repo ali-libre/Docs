@@ -1,0 +1,11 @@
+ 
+kbox:
+----kevinboone.net/----
+cp kbox3-install-base /data/data/jackpal.androidterm/
+chmod 755 kbox3-install-base
+./kbox3-install-base
+#now :
+/data/data/jackpal.androidterm/kbox3/bin/kbox_shell
+#fo default shell and-term-> perfrence-> shll (/system/bin/sh to /data/data/jackpal.androidterm/kbox3/bin/kbox_shell)
+dpkg -i package.deb
+#if something go wrong then (like backup status) http://kevinboone.net/kbox3_limitations_and_bugs.html

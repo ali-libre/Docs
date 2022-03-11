@@ -1,0 +1,10 @@
+#for index every file using :
+** >> ~/.config/baloofiilerc 
+#for add hidden file and folder indexing to baloo
+/home/ali> balooctl config set hidden 1
+#for borderless maximize window edit:
+#~/.kde4/share/config/kwinrc
+#~/.config/kwinrc
+#under [windows] section
+#add "BorderlessMaximizedWindows=true"
+#restart kwin using "kwin --replace" or "kwin_x11 --replace" or restart system...

@@ -1,0 +1,91 @@
+# See /boot/overlays/README for all available options
+#http://elinux.org/RPiconfig
+
+gpu_mem=64
+
+hdmi_drive=2
+#hdmi_mode=16
+dtparam=audio=on
+
+config_hdmi_boost=10
+
+hdmi_force_hotplug=1
+sdtv_mode=3
+# Force the monitor to HDMI mode so that sound will be sent over HDMI cable
+hdmi_drive=1
+# Set monitor mode to DMT->2 CEA->1
+hdmi_group=1
+#hdmi_mode=83   1600x900          Reduced blanking
+hdmi_mode=83
+# Set monitor resolution to 1024x768 XGA 60 Hz (HDMI_DMT_XGA_60)
+#hdmi_group=1
+#hdmi_mode=14
+# Make display smaller to stop text spilling off the screen
+
+#for disable warning icon :
+avoid_warnings=1 # remove the warning overlays
+avoid_warnings=2 # addtionally allow turbo when loaw volatage is present 
+
+#overscan_left=20
+#overscan_right=12
+#overscan_top=10
+#overscan_bottom=10
+
+#initramfs
+initramfs initrd 0x00f00000
+
+#overclock
+arm_freq=1000
+core_freq=500
+sdram_freq=500
+over_voltage=6
+force_turbo=1
+
+for 5" lcd:
+    max_usb_current=1
+    hdmi_group=2
+    hdmi_mode=87
+    hdmi_cvt 800 480 60 6 0 0 0
+    according to this page::
+        https://www.raspberrypi.org/forums/viewtopic.php?t=24679
+        hdmi_cvt=<width> <height> <framerate> <aspect> <margins> <interlace> <rb>
+        width        width in pixels
+        height       height in pixels
+        framerate    framerate in Hz
+        aspect       aspect ratio 1=4:3, 2=14:9, 3=16:9, 4=5:4, 5=16:10, 6=15:9
+        margins      0=margins disabled, 1=margins enabled
+        interlace    0=progressive, 1=interlaced
+        rb           0=normal, 1=reduced blanking
+
+
+logo.nologo 
+disable_splash=1
+max_usb_current=1
+
+
+
+for rasp-pi3 overclock:
+    arm_freq=1300
+    gpu_freq=500
+    over_voltage=4
+    core_freq=500
+    sdram_freq=580
+    over_voltage_sdram=5
+    sdram_schmoo=0x02000020
+    force_turbo=1
+
+    enable_uart=1
+
+#armv8 on rasp-pi3b
+    arm_control=0x200
+
+#if audio white noise present
+    disable_audio_dither=1
+
+display_rotate=0 Normal
+display_rotate=1 90 degrees
+display_rotate=2 180 degrees
+NOTE: You can rotate both the image and touch interface 180º by entering lcd_rotate=2 instead
+display_rotate=3 270 degrees
+display_rotate=0x10000 horizontal flip
+display_rotate=0x20000 vertical flip

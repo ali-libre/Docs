@@ -1,0 +1,10 @@
+stm32::
+    install stmcubemx on linux ::
+        download link is https://www.st.com/en/development-tools/stm32cubemx.html?sc=stm32cubemx
+        download link can be found on stm32cubemx document
+        it written in java but avail in exe format
+        to install it on linux just run
+        sudo java -jar SetupSTM32CubeMX-x.x.x.exe
+        it can be run portably and availe in workspace/sys/app/stm32cubemc and it;s archive
+
+        config qtcreator to using stm32 programming::

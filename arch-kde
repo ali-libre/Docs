@@ -1,0 +1,26 @@
+#printer on arch
+pacman -S cups print-manager ghostscript foomatic-db
+#install driver:
+sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds
+#or if not found ppd file are found on 
+sudo systemctl start avahi* cups*
+#web -> localhost:631
+#video thumbnail : phonon-qt4-vlc phonon-qt5-vlc
+#kcolorchooser
+#usefull app: blender freecad octave kicad 
+#fs tool: ntfs-3g dosfstools
+#kde dep:kdesdk-strigi-analyzers
+#base-devel plasma
+#for use screen use kscreen
+#for run script place script on /etc/profile.d
+
+for quiet startup :
+  quiet loglevel=3 rd.udev.log-priority=3
+    for fsck:
+      
+
+      
+      sudo pacman -S $(pacman -Qeq) --noconfirm
+
+      pacman desc: No such file
+      touch neccesary file...

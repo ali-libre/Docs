@@ -1,0 +1,26 @@
+pic::
+
+site to start::
+
+programmer::
+http://www.grennan.com/picprog/ (using pic16f86)
+usbpicprog.org/
+
+for using orginal pickit2 of microchip Do ....::
+http://www.microchip.com/forums/download.axd?file=0;749972 (datafile)
+ww1.microchip.com/downloads/en/DeviceDoc/PICkit2_PK2CMD_WIN32_SourceV1-21_RC1.zip (source file)
+using aur to download pathc
+copy patch to source folder ...
+patch -Np1 -i pk2_devicefile_osfile_paths.patch
+make linux
+done.
+stored nedded file on the workspace/sys/app/pic/
+
+http://www.waveguide.se/?article=programming-pics-using-the-pickit2-and-pk2cmd
+http://danamlund.dk/pic_microcontroller_blinking_led_without_cheating.html
+https://www.digitalpeer.com/blog/programming-a-pic-on-linux-tutorial
+
+/home/ali/workspace/Sys/App/PIC/pk2cmd/pk2cmd/pk2cmd  -B/home/ali/workspace/Sys/App/PIC/pk2cmd/pk2cmd/
+
+beginning::Code
+https://github.com/diegoherranz/sdcc-examples

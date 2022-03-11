@@ -1,0 +1,29 @@
+Section "ServerLayout"
+    Identifier "ServerLayout0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime"     "0"
+    Option "BlankTime"   "0"
+EndSection
+
+Section "InputClass"
+	Identifier "Promotion & Display Technology, Ltd"
+	MatchIsPointer "yes"
+# set the following to 1 1 0 respectively to disable acceleration.
+	Option "AccelerationNumerator" "2"
+	Option "AccelerationDenominator" "2"
+	Option "AccelerationThreshold" "4"
+EndSection
+
+Section "Files"
+    FontPath    "/usr/share/fonts/100dpi"
+    FontPath    "/usr/share/fonts/75dpi"
+    FontPath    "/usr/share/fonts/cantarell"
+    FontPath    "/usr/share/fonts/cyrillic"
+    FontPath    "/usr/share/fonts/encodings"
+    FontPath    "/usr/share/fonts/misc"
+    FontPath    "/usr/share/fonts/truetype"
+    FontPath    "/usr/share/fonts/TTF"
+    FontPath    "/usr/share/fonts/util"
+EndSection
+

@@ -1,0 +1,42 @@
+GSM
+SIM800L:: SIM900 A6 A7
+
+AT+CSQ?                                     // signal quality
+AT+CREG?                                    // check network register
+AT+CBC                                      // check Battery Info
+
+SetUP GPRS::
+AT+SAPBR=3,1,"Contype","GPRS"               //Set connection type to gprs
+AT+SAPBR=3,1,"APN","www"                    // set APN ( change www with ex:irancell)
+AT+SAPBR =1,1                               // enable GPRS
+AT+SAPBR =2,1                               // Get IP Address , check connected to internet
+or::
+AT+CGATT=?                                  // check gprs connection
+AT+CSTT="irancell"                          // change APN
+AT+CIICR                                    // Connect to network
+AT+CIFSR                                    // check connectivity
+
+to connect to TCP port::
+AT+CIPSTART="TCP","95.211.187.76","80"      //Connect to UDP/TCP
+
+
+Get net location and time::
+AT+CIPGSMLOC=2,1                            // get time date loc info +CIPGSMLOC: 0,2017/07/16,18:07:13 
+AT+CIPGSMLOC=1,1                            // get time date loc info +CIPGSMLOC: 0,78.151830,15.958542,2017/07/16,18:07:47 
+                                           
+dilaing::                                  
+ATA                                         // Answer
+ATDxxxxxxxxxxxxx;                           // Dial xxxxxxxxxxx number
+ATDL                                        // Dial last
+ATI                                         // INFO
+ATH                                         // Hang
+ATEx                                        // enable disable echo x be 1 or 0
+                                           
+SMS MODE::                                 
+AT+CSCS="GSM"                               // Change charset type
+AT+CMGF=1                                   // change to text mode
+AT+CMGF=1                                   // change to text mode
+AT+CMGL=?                                   // Read list of sms
+AT+CMGR=x                                   // Read sms x
+AT+CMGR="ALL"                               // Read ALL sms
+AT+CMGD=x,y                                 //delete x message , y 0 - index, 1 -all but unread, 2 -all but unread unsend,3 -,4 all

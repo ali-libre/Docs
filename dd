@@ -1,0 +1,1 @@
+dd if=somefile bs=4096 skip=1337 count=31337000 iflag=skip_bytes,count_bytes

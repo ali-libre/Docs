@@ -1,0 +1,4 @@
+dispaly manager ::
+sometime HDMI could not detect with plasma
+in such time xrandr will apply some setting to system
+just run "xrandr" then HDMI will detect ...

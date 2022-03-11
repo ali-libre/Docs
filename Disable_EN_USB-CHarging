@@ -1,0 +1,13 @@
+disable USB Charging::
+/sys/devices/battery.XX/power_supply/battery/hv_charger_set
+0 - Disable USB Charging
+1 - Enable USB Charging
+#root privilage
+
+adb shell dumpsys battery set ac 1
+adb shell dumpsys battery set usb 1
+adb shell dumpsys battery set wireless 1
+Or 0 t disable
+
+Or 
+dumpsys battery unplug

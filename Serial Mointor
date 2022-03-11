@@ -1,0 +1,15 @@
+Serial:
+minicom -b 115200 -D /dev/ttyUSB0
+miniterm.py /dev/
+
+virtual:
+best link:http://stackoverflow.com/questions/52187/virtual-serial-port-for-linux
+    1-in the first terminal -> 
+    socat -d -d pty,raw,echo=0 pty,raw,echo=0
+    2- inthe secound terminal
+    cat < /dev/pts/2
+    3-on the third terminal
+    echo "test" > /dev/pts/3
+
+to get or set info  ::
+    stty -F "devive"    

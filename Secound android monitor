@@ -1,0 +1,40 @@
+use android device as secound monitor::
+
+$ cvt 1920 1080
+# 1920x1080 59.96 Hz (CVT 2.07M9) hsync: 67.16 kHz; pclk: 173.00 MHz
+Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+
+Add that mode to xrandr
+
+xrandr --newmode "1920x1080_60"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+
+Put e.g. HDMI2 in that mode, and attach to the right of eDP1 (Main screen)
+
+xrandr --addmode HDMI2 1920x1080_60
+--output HDMI2 --mode 1920x1080_60 --right-of eDP1
+
+Now export that with x11vnc, choosing the appropriate offset:
+
+x11vnc -display :0 -clip 1920x1080+1600+0 <other options>
+
+Note: Add desired encryption/authentication/other options to that command.
+
+Now connect to with a VNC client to your "virtual monitor". (or modify above command to connect to a "listening" VNC-client.
+
+
+x11vnc -clip 1920x1080+1600+0  ->> x11vnc -clip xinerama1
+
+best vnc client is "bvnc"
+
+
+cvt 1280 800 60
+xrandr --newmode "1280x800_60.00"   83.50  1280 1352 1480 1680 
+xrandr --addmode VIRTUAL1 1280x800 60.00
+xrandr --addmode VIRTUAL1 1280x800_60.00
+xrandr --output VIRTUAL1 --mode 1280x800_60.00 --left-of LVDS1
+
+
+x11vnc -rotate 90
+x11vnc -ncache 10 Try x11vnc's client-side caching
+x11vnc -xrandr //to take it run with xrandrchange
+-solid solid background when VNC viewers are connected

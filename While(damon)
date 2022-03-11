@@ -1,0 +1,11 @@
+forever daemon loop:
+[Unit]
+Description=button press
+DefaultDependencies=no
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+
+ExecStart=/usr/sbin/sh /etc/but.sh
+#ExecStart=/usr/sbin/sh /etc/app.sh

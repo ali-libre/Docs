@@ -1,0 +1,14 @@
+pacman -S xorg-{server,utils,xinit,xinput,xwininfo,xlogo,xauth,xclock,twm}
+/etc/pacman.conf
+
+xf86-input-{keyboard,synaptics,mouse,libinput}
+alsa-{utils,plugins,plugins,firmware} pulseaudio pulseaudio-{equalizer,alsa,gconf}
+pacman -S net-{snmp,tools}
+passwd root
+useradd -m -g users ali
+usermod   $username  -a -G wheel,storage,power,audio,games
+chsh -s  /bin/bash  $username
+pacman -S  plasma  kde-applications-meta  plasma-mediacenter
+systemctl enable  sddm.service
+pacman -Q |list of install app
+pacman -Q

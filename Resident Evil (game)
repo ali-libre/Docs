@@ -1,0 +1,77 @@
+RESIDENT EVIL 2::
+
+
+
+
+resident evil 3 hex cheat ::
+site :: https://www.cheaters-heaven.com/cheats/33115-resident-evil-3-nemesis-hex-cheat.html
+
+
+
+begin::
+RESIDENT EVIL 3: NEMESIS HEX CHEAT
+
+Start a new game, then save it. Open your hex editing software (I recommend cygnus hex editor), and find "bu00.save" in your resident evil 3 directory. All items edited can be found in your storage box.
+The box contents starts at line ?000024B0? (FOR JILL),  "000025F0" (FOR CARLOS).
+Edit the line that contains (0000 0000)
+FOR EXAMPLE: IF U WANTS M92F HANDGUN WITH UNLIMITED AMMO, 20 FIRST AID SPRAY, IT SHOULD BE:
+03FF 0F00 (M292F HANDGUN) , 2A20 0100 (FIRST AID SPRAY)
+FOR EXAMPLE: IF U WANTS M92F HAND GUN WITH 255 AMMO, 20 FIRST AID SPRAY, IT SHOULD BE:
+03FF 0100 (M292F HANDGUN) , 2A20 0100 (FIRST AID SPRAY)
+03 = Code of the item
+FF = 255 MAX AMMO
+0F = Unlimited Ammo
+01 = One item only (?01? Must be added if you don?t want unlimited things)
+Code	Items
+01	Combat Knife
+02	Sigpro SP2009 Handgun
+03	M92F Handgun (Jill Only)
+04	Benelli MS3 Sawed Off Shot Gun
+05	S&W M629C Magnum
+06	Grenade Launcher Explosive (Jill Only)
+07	Grenade Launcher Flame (Jill Only)
+08	Grenade Launcher Vitrolic (Jill Only)
+09	Grenade Launcher Freezing (Jill Only)
+0A	Rocket Launcher
+0B	Gatling Gun
+0C	Mine Thrower (Jill Only)
+0D	Eagle 6.0
+0E	Assault Rifle (Manual)
+0F	Assault Rifle (Auto)
+	For manual and auto assault rifle to combine together it should be "0FFF FFFF"
+10	Western Custom M37 (Jill only)
+11	Sigpro Enhanced
+12	M92F Custom Enhanced (Jill only)
+13	Benelli MS3 Enhanced
+14	Mine Thrower Enhanced
+15	HANDGUN BULLETS
+16	MAGNUM BULLETS
+17	SHOTGUN BULLETS
+18	EXPLOSIVE GRENADE AMMO
+19	FLAME BOMB AMMO
+1A	VITROLIC BOMB AMMO
+1B	FREEZING BOMB AMMO
+1C	MINE THROWER AMMO
+1D	ASSAULT RIFFLE AMMO
+1E	FORTIFIED M92F & SIGPRO BULLETS
+1F	SHOTGUN BULLETS (M3S)
+20	FIRST AID SPRAY
+21	GREEN HERB
+22	BLUE HERB
+23	RED HERB
+24	GREEN HERB + GREEN HERB
+25	BLUE HERB + GREEN HERB
+26	RED HERB + GREEN HERB
+27	GREEN HERB + GREEN HERB + GREEN HERB
+28	GREEN HERB + 2 BLUE HERBS
+29	GREEN HERB + BLUE HERB + RED HERB
+2A	FIRST AID BOX
+81	INK RIBBON (TO SAVE YOUR GAME)
+80	BOUTIQUE KEY
+Note:  All codes I add here were only weapons, health pack and ink ribbon. Others you have to find it yourself. Have a cheating day. :D
+
+
+
+0A FF 0F 00     rocket launcher (infinite ammo)
+0F FF 0F 00     ASSAULT RIFFLE  (infinite ammo)
+2A FF 0F 00     First Aid Box (infinite Asprine)

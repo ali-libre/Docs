@@ -1,0 +1,15 @@
+برای بار اول 
+old_State = digitalRead(encoderOutA);
+
+در حلقه اصلی
+State = digitalRead(encoderOutA);
+if (State != old_State)
+{
+if (digitalRead(encoderOutB) != State)
+{
+brightness ++;
+}
+else {
+brightness --;
+}
+old_State = State;

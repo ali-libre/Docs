@@ -1,0 +1,14 @@
+refer to this site:
+http://free-electrons.com/blog/super-fast-linux-splashscreen/
+slow 878msec to show:
+fbv -d 1 /root/logo.bmp > /dev/null 2>&1
+ but :
+fbv -d 1 /root/logo.bmp
+cp /dev/fb0 /root/logo.fb
+now-> 
+dd if=/root/logo.fb of=/dev/fb0 bs=230400 count=1 > /dev/null 2>&1
+take 54ms 
+ with lz compresstion it wil be better
+lzop -9 /root/logo.fb
+lzopcat /root/logo.fb.lzo > /dev/fb0
+now it take 52msec

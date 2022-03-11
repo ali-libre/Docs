@@ -1,0 +1,5 @@
+to instal in arch::
+python-docker python-appdirs python-setuptools python-netifaces python-peewee python-pillow python-psutil python-pluggy python-asn1crypto python-pyasn1 python-pytz python-six python-twisted python-cffi python-autobahn python-ndg-httpsclient python-certifi python-prettytable python-pyaml python-txaio python-pydispatcher python-crypto python-scrypt python-packaging python-semantic-version python-pyopenssl python-requests python-automat python-zope-interface python-incremental python-pycparser python-numpy python-scipy 
+
+golem-electron for gui
+ansible-role-golem-ethereum for ethereum

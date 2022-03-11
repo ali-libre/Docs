@@ -1,0 +1,26 @@
+dor install i2c-ds1307
+do 
+pacman -S  i2c-tools lm_sensors
+echo   dtparam=i2c_arm=on >> /boot/config.txt
+be sure file /etc/modules-load.d/raspberrypi.conf content have :
+
+i2c-bcm2708
+i2c-dev
+rtc-ds1307
+
+test i2c device :
+ i2cdetect -y 0
+
+dependence of i2c number 
+echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
+for read hwclock -r
+for sync hwclock -s
+for write time  hwclock -w
+
+better :
+dtparam=i2c_arm=on
+dtoverlay=i2c-rtc,ds1307
+device_tree_param=spi=on
+
+
+for above "i2c-dev" must exist to /etc/modules-load.d/raspberrypi.conf

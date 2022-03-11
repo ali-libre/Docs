@@ -1,0 +1,6 @@
+to hide vt cursor read quiete boot
+
+to visible it again
+# echo -e '\033[?25h' > /dev/tty1
+# echo 1 > /sys/class/graphics/fbcon/cursor_blink
+

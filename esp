@@ -1,0 +1,18 @@
+// in esp arduino
+// sleep modem in asp took ~4.5sec &ap mode took ~7.5sec to reconect
+//  so for ata mode :
+    WiFi.mode(WIFI_STA);
+// for sleep modem 
+    WiFi.forceSleepBegin();
+// for reverse 
+    WiFi.forceSleepWake();
+// for read adc 
+    analogRead(A0);
+// for read vcc 
+    system_adc_read();
+    ESP.getVcc();
+//for print to client
+    client.print();
+//for send data 
+    client.write();
+    
